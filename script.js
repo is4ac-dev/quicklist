@@ -14,11 +14,36 @@ function mainScript() {
 
     //Capturando valor recebido pelo input
     const newProduct = getProductInput()
-    console.log(`Capturando produto registrado pelo usuário: ${newProduct}`)
 
-    //Adicionando novo item na lista
-    addNewListItem(newProduct)
+    //Verificando se algo foi digitado
+    if (newProduct != "") {
 
+      //Exibindo mensagem de registro
+      console.log("Registrando produto do usuário...")
+
+      //Adicionando novo item na lista
+      addNewListItem(newProduct)
+      console.log(`Produto ${newProduct} adicionado a lista!`)
+    }
+  })
+
+  //Acessando lista
+  const list = document.querySelector("ul")
+
+  //Detectando evento de click na lista
+  list.addEventListener("click", (event) => {
+    
+    //Verificando se o evento click foi feito em uma img dentro do button ou no próprio button
+    const removeButton = event.target.closest(".remove-button")
+    console.log("Evento de remoção detectado!")
+
+    //Se for feito no botão
+    if (removeButton) {
+
+      //Remove o pai do elemento clicado
+      removeButton.parentElement.remove()
+      console.log("Removendo elemento da lista...")
+    }
   })
 }
 
@@ -64,6 +89,9 @@ function createNewElement(itemValue) {
 
   //Definindo tipo do <button>
   button.type = "button"
+
+  //Definindo classe do <button>
+  button.classList.add("remove-button")
 
   //Adicionando o produto registrado em <span>
   span.textContent = itemValue
