@@ -1,0 +1,13 @@
+#alert-message {
+  background-color: aqua;
+  transition: all 1000ms ease;
+}
+
+.hidden-message {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.remove-button {
+  cursor: pointer;
+}

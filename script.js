@@ -1,3 +1,5 @@
+let alertTimeOut
+
 function mainScript() {
 
   //Acessando formulário
@@ -43,6 +45,22 @@ function mainScript() {
       //Remove o pai do elemento clicado
       removeButton.parentElement.remove()
       console.log("Removendo elemento da lista...")
+
+      showAlertMessage()
+    }
+  })
+
+  //Acessando mensagem de alerta
+  const alertMessage = document.querySelector("#alert-message")
+
+  alertMessage.addEventListener("click", (event) => {
+    console.log("Clicado")
+
+    const removeButton = event.target.closest(".remove-button")
+
+    if (removeButton) {
+
+      removeButton.parentElement.classList.add("hidden-message")
     }
   })
 }
@@ -79,19 +97,15 @@ function createNewElement(itemValue) {
 
   //Criando tags
   const listItem = document.createElement("li")
-  const checkbox = document.createElement("input")
+  const checkbox = document.createElement("div")
   const span = document.createElement("span")
-  const button = document.createElement("button")
   const img = document.createElement("img")
 
-  //Definindo tipo do <input>
-  checkbox.type = "checkbox"
+  //Definindo classe da div
+  checkbox.classList.add("checkbox-div")
 
-  //Definindo tipo do <button>
-  button.type = "button"
-
-  //Definindo classe do <button>
-  button.classList.add("remove-button")
+  //Definindo classe do <img>
+  img.classList.add("remove-button")
 
   //Adicionando o produto registrado em <span>
   span.textContent = itemValue
@@ -100,14 +114,25 @@ function createNewElement(itemValue) {
   img.src = "assets/trash.svg"
   img.alt = "ícone de lixeira"
 
-  //Adicionando <img> no <button>
-  button.append(img)
-
   //Por fim, adicionando os elementos em <li>
-  listItem.append(checkbox, span, button)
+  listItem.append(checkbox, span, img)
 
   //Retornando <li> criado
   return listItem
+}
+
+function showAlertMessage() {
+  
+  //Acessando informações da mensagem de alerta
+  const alertMessage = document.querySelector("#alert-message")
+
+  alertMessage.classList.remove("hidden-message")
+
+  clearTimeout(alertTimeOut)
+
+  alertTimeOut = setTimeout(() => {
+    alertMessage.classList.add("hidden-message")
+  }, 5000)
 }
 
 mainScript()
