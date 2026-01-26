@@ -1,19 +1,27 @@
-function getProductInput() {
+function mainScript() {
   //Acessando formulário
   const form = document.querySelector("form")
-  console.log("Acessando formulário")
 
   //Detectando evento de submit
   form.addEventListener("submit",(event) =>{
-    
     //Impendindo que a página recarregue
     event.preventDefault()
 
-    //Capturando valor
-    inputValue = document.querySelector("form input").value
-    console.log("Capturando valor enviado pelo user")
+    //Informando detecção de evento
+    console.log("Evento submit detectado!")
 
-    //Retornando valor capturado
-    return inputValue
+    //Capturando valor recebido pelo input
+    newProduct = getProductInput()
+    console.log(`Capturando produto registrado pelo usuário: ${newProduct}`)
   })
 }
+
+function getProductInput() {
+  //Capturando valor
+  inputValue = document.querySelector("form input").value
+
+  //Retornando valor capturado
+  return inputValue
+}
+
+mainScript()
