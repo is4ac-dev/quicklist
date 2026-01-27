@@ -86,6 +86,10 @@ form {
     &:focus {
       outline: none;
       border-color: var(--color-brand);
+
+      &::placeholder {
+        color: var(--content-primary);
+      }
     }
 
     &::placeholder {
