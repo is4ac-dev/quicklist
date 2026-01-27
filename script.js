@@ -101,7 +101,10 @@ function createNewElement(itemValue) {
   const span = document.createElement("span")
   const img = document.createElement("img")
 
-  //Definindo classe da div
+  //Definindo classe do <li>
+  listItem.classList.add("list-item")
+
+  //Definindo classe da <div>
   checkbox.classList.add("checkbox-div")
 
   //Definindo classe do <img>

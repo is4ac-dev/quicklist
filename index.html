@@ -13,38 +13,40 @@
 <body>
   <main>
 
-    <a href="">&larr;Voltar </a>
+    <img src="assets/logo.svg" alt="logo do Quicklist">
+
+    <a href="#">Voltar </a>
 
     <h1>Compras da semana</h1>
 
     <form>
 
-      <input type="text" placeholder="Adicione um novo item">
+      <input type="text" name="input-box" placeholder="Adicione um novo item">
       <button>Adicionar item</button>
 
     </form>
 
     <ul>
 
-      <li >
+      <li class="list-item">
         <div class="checkbox-div"></div>
         <span>Pão de forma</span>
         <img src="assets/trash.svg" alt="ícone de lixeira" class="remove-button">
       </li>
 
-      <li >
+      <li class="list-item">
         <div class="checkbox-div"></div>
         <span>Café preto</span>
         <img src="assets/trash.svg" alt="ícone de lixeira" class="remove-button">
       </li>
 
-      <li >
+      <li class="list-item">
         <div class="checkbox-div"></div>
         <span>Suco de laranja</span>
         <img src="assets/trash.svg" alt="ícone de lixeira" class="remove-button">
       </li>
 
-      <li >
+      <li class="list-item">
         <div class="checkbox-div"></div>
         <span>Biscoito</span>
         <img src="assets/trash.svg" alt="ícone de lixeira" class="remove-button">
@@ -57,7 +59,7 @@
   <div id="alert-message" class="hidden-message">
 
     <img src="assets/alert.svg" alt="ícone de alerta">
-    <span></span>
+    <span>O item foi removido da lista</span>
     <img src="assets/exit.svg" alt="ícone de X" class="remove-button">
 
   </div>

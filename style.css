@@ -16,17 +16,158 @@
 
    /* BORDER */
    --border-primary: #D1D5DB;
-   --birder-hover: #B9C2D0;
+   --border-hover: #B9C2D0;
 
    /* TIPOGRAPHY */
    --title: 700 1.5rem/2rem "Inter", sans-serif;
-   --label: 600 1rem/1.25rem "Inter", sans-serif;
+   --label: 600 0.75rem/1.25rem "Inter", sans-serif;
+   --input: 500 0.75rem/1.25rem "Inter", sans-serif;
    --parag: 500 1rem/1.25rem "Inter", sans-serif;
-   --link : 500 0.875/1rem "Inter", sans-serif;
+   --link : 500 0.875rem/1rem "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-primary);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 85vh;
+  margin: 2rem auto 0;
+
+  img {
+    align-self: center;
+  }
+
+  a {
+    font: var(--link);
+    color: var(--color-brand);
+    text-decoration: none;
+    width: 0;
+
+    margin: 3rem 0 1rem;
+  }
+
+  h1 {
+    font: var(--title);
+    color: var(--content-primary);
+    margin-bottom: 2rem;
+  }
+}
+
+form {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+
+  input {
+    background-color: var(--background-secondary);
+    
+    width: 71%;
+    padding: 0.75rem;
+
+    border: 2px solid var(--border-primary);
+    border-radius: 0.75rem;
+
+    &::placeholder {
+      font: var(--input);
+      color: var(--content-tertiary);
+    }
+  }
+
+  button {
+    background-color: var(--color-brand);
+
+    width: 25%;
+    padding: 0.5rem;
+
+    border: none;
+    border-radius: 0.75rem;
+
+    font: var(--label);
+    color: var(--always-white);
+    
+    cursor: pointer;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+
+  background-color: var(--background-secondary);
+
+  gap: 1rem;
+
+  padding: 0.75rem;
+
+  border-radius: 0.5rem;
+
+  .checkbox-div {
+    width: 1rem;
+    height: 1rem;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 0.3rem;
+  }
+
+  span {
+    font: var(--parag);
+    color: var(--content-secondary);
+    width: 100%;
+  }
+
+  .remove-button {
+    width: 1rem;
+    height: 1rem;
+
+    margin: auto;
+  }
 }
 
 #alert-message {
-  transition: all 1000ms ease;
+  width: 85vh;
+  background-color: var(--color-danger);
+
+  display: flex;
+  
+  gap: 0.5rem;
+
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  
+  margin: auto;
+  padding: 0.5rem;
+
+  border-radius: 0.75rem;
+
+  transition: opacity 1000ms ease;
+
+  span {
+    font: var(--label);
+    color: var(--always-white);
+    width: 100%;
+  }
 }
 
 .hidden-message {
