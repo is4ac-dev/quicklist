@@ -11,21 +11,14 @@ function mainScript() {
     //Impendindo que a página recarregue
     event.preventDefault()
 
-    //Informando detecção de evento
-    console.log("Evento submit detectado!")
-
     //Capturando valor recebido pelo input
     const newProduct = getProductInput()
 
     //Verificando se algo foi digitado
     if (newProduct != "") {
 
-      //Exibindo mensagem de registro
-      console.log("Registrando produto do usuário...")
-
       //Adicionando novo item na lista
       addNewListItem(newProduct)
-      console.log(`Produto ${newProduct} adicionado a lista!`)
     }
   })
 
@@ -37,15 +30,14 @@ function mainScript() {
     
     //Verificando se o evento click foi feito em uma img dentro do button ou no próprio button
     const removeButton = event.target.closest(".remove-button")
-    console.log("Evento de remoção detectado!")
 
     //Se for feito no botão
     if (removeButton) {
 
       //Remove o pai do elemento clicado
       removeButton.parentElement.remove()
-      console.log("Removendo elemento da lista...")
 
+      //Exibindo mensagem de alerta
       showAlertMessage()
     }
 
@@ -73,7 +65,6 @@ function mainScript() {
       removeButton.parentElement.classList.add("hidden-message")
     }
   })
-
 
 }
 
