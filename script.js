@@ -48,6 +48,16 @@ function mainScript() {
 
       showAlertMessage()
     }
+
+    //Verificando se o evento click foi feito no checkbox
+    const checkbox = event.target.closest(".checkbox-div")
+
+    //Se for feito no checkbox
+    if (checkbox) {
+
+      //Alterar o estado do checkbox
+      checkbox.classList.toggle("checked")
+    }
   })
 
   //Acessando mensagem de alerta
@@ -63,6 +73,8 @@ function mainScript() {
       removeButton.parentElement.classList.add("hidden-message")
     }
   })
+
+
 }
 
 function getProductInput() {
