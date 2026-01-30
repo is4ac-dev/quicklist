@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/is4ac-dev/quicklist/issues"
   },
-  "homepage": "https://github.com/is4ac-dev/quicklist#readme"
+  "homepage": "https://github.com/is4ac-dev/quicklist#readme",
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.5"
+  }
 }
