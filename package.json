@@ -1,0 +1,21 @@
+{
+  "name": "quicklist",
+  "version": "1.0.0",
+  "description": "![Status do Projeto](https://img.shields.io/badge/Status-Concluído-green) ![License](https://img.shields.io/badge/License-MIT-blue)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/is4ac-dev/quicklist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/is4ac-dev/quicklist/issues"
+  },
+  "homepage": "https://github.com/is4ac-dev/quicklist#readme"
+}
